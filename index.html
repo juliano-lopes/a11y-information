@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Accessibility Information</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header">
+      <font size="7">Welcome to our A11Y information website</font>
+    </div>
+
+    <div class="nav">
+      <ul>
+        <li><a href="#hig">High Contrast Mode</a></li>
+        <li><a href="#col">Color contrast</a></li>
+        <li><a href="#cap">CAPTCHAs</a></li>
+        <li><a href="#swi">Switch access</a></li>
+      </ul>
+
+      <form class="search">
+        <input type="search" name="q" placeholder="Search query">
+        <input type="submit" value="Go!">
+      </form>
+    </div>
+
+    <main>
+      <article>
+        <font size="6">Accessibility information</font>
+        <br><br>
+        By A11Y team
+        <br><br>
+<font id="hig" size="5">High Contrast Mode and Chrome</font>
+<br><br>
+        What is High Contrast Mode in Chrome?        High Contrast Mode refers to settings that a user is able to toggle between to set the contrast of their screen in the way that is most comfortable for their use. In the Chrome browser this can be achieved by using an extension called High Contrast.
+
+        <br><br>
+        What is the purpose of this test? To ensure that a website's contents respond well to the preferences set by the user in High Contrast, regardless of the settings chosen, and that the contents are fully visible and interactable.
+
+        <br><br>
+        <font id="col" size="5">Color contrast</font>
+        <br><br>
+        What is a Contrast Checker? A tool automatically calculates the contrast between two cores according to the Web Content Accessibility Guidelines (WCAG).
+
+        <br><br>
+        What is the purpose of this test? The principle of contrast is very important in the composition and harmonization of colors that helps with legibility, reading, in addition to invoking sensory aspects, the problem is that not all people perceive color in the same way
+<br>
+It is necessary to provide sufficient color contrast between background and foreground content to better support users with low vision or color blindness in understanding the information on the screen.
+<br>
+Higher contrast ratios are beneficial to all users. Make sure that the contrast between the colors is according to the WCAG standard and that the user can navigate the flow without hindrance.
+        <br><br>
+        
+        <font id="cap" size="5">CAPTCHAs</font>
+        <br><br>
+        What is captcha? CAPTCHA = A challenge-response test used to determine whether a user is a human or a bot. Most notable example is the barely-legible, distorted, or “fuzzy” alphanumeric codes a user must correctly copy before submitting a form, or sometimes confirming which pictures in a grid contain a specific object, or solving a basic arithmetic problem.
+        <br><br>
+       <!--  <img src="media/img1.jpg"> -->
+        <br><br>
+        What is this testing goal? We need to ensure someone using assistive technology will also be able to complete the user flow, even If CAPTCHAs or other tests are used.
+
+        <br><br>
+        <!-- <img src="media/img2.jpg"> -->
+        <br><br>
+        When testing captchas, we want to be sure that:
+<br>
+there are sensory alternatives to this (if it’s image challenge, there’s also an audio option to be reproduced);<br>
+Users using assistive technologies like a screen reader are able to find and operate the captcha’s controls.
+
+        <br><br>
+        <font id="swi" size="5">Switch access</font>
+        <br><br>
+        What is Switch Access? Switch Access is a assistive device that helps people with cognitive difficulties, developmental delays and physical limitations. It needs to connect to your devices as desktop, notebook and phones to replace the functionality of a keyboard or mouse.
+
+        <br><br>
+        All people need independence in their daily lives. People with mobility limitations had some limitations in their daily lives. Using the switch access can resignify the freedom of being able to work and have your life the way the user wants. 
+
+        <br><br>
+        <!-- <audio controls>
+          <source src="media/bear.mp3" type="audio/mp3">
+          <source src="media/audio1.ogg" type="audio/ogg">
+          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+        </audio> -->
+
+        <aside>
+
+          <font size="5">About this fake site</font>
+        <br><br>
+        This is a fake site to show some issues that we find on a web page.
+        <br><br>
+        However, the accessibility information   (High Contrast Mode, Color contrast, CAPTCHAs and Switch access) are true.
+
+        </aside>
+        <section class="comments">
+          <div class="show-hide">Show comments</div>
+
+          <div class="comment-wrapper">
+
+            <font size="6">Add comment</font>
+
+            <form class="comment-form">
+              <div class="flex-pair">
+                Your name:
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+              </div>
+              <div class="flex-pair">
+                Your comment:
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+              </div>
+              <div>
+                <input type="submit" value="Submit comment">
+              </div>
+            </form>
+
+            <font size="6">Comments</font>
+
+            <ul class="comment-container">
+
+              <li>
+
+                <p>Juliano</p>
+
+                <p>This accessibility information is really fantastic! Thanks for teaching us about it!</p>
+
+              </li>
+
+            </ul>
+
+          </div>
+        </section>
+      </article>
+
+      <div class="secondary">
+        <font size="6">Related</font>
+
+        <ul>
+          <li><a href="#">Screen readers</a></li>
+          <li><a href="#">Assistive Technology</a></li>
+          <li><a href="#">Inclusive design</a></li>
+          <li><a href="#">Accessibility on Android</a></li>
+                  </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>©Copyright 2023 by everyone. All rights accepted.</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>

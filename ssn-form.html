@@ -17,7 +17,7 @@
             <input id="d3" size="3" type="text" aria-required="true" title="First 3 digits">-
             <input id="d2" size="2" type="text" aria-required="true" title="Next 2 digits">-
             <input id="d4" size="4" type="text" aria-required="true" title="Last 4 digits">
-            <input onclick="return alert('Registration done successfully!');" id="save" type="submit" aria-label="Save">
+            <input id="save" type="button" aria-label="Save">
         </div>
     </form>
     <script>
@@ -27,6 +27,11 @@
         };
         document.querySelectorAll('input[type="text"]').forEach((input) => {
             input.addEventListener("keyup", move);
+        });
+        document.getElementById("save").addEventListener("click", () => {
+            alert('Registration done successfully!');
+            document.getElementById("ssn-form").reset();
+            document.getElementById("d3").focus();
         });
 
     </script>

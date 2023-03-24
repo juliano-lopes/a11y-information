@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<!-- saved from url=(0082)https://www.w3.org/WAI/WCAG21/working-examples/aria-grouping-multipart-fields-ssn/ -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Marking up forms and reporting violations for forms</title>
+    <title>register with your Social Security number</title>
 </head>
 
 <body>
 
-    <h1>Multi-part fields like social security# and telephone#:</h1>
-    <form action="" method="post" id="form6">
+    <h1>SSN registration form</h1>
+    <form action="ssn-form.html" method="post" id="form6">
         <div role="group" aria-labelledby="ssn1">
             <span id="ssn1">Social Security#</span>
             <span style="color:#D90D0D;"> * </span>
             <input id="d3" size="3" type="text" aria-required="true" title="First 3 digits">-
             <input id="d2" size="2" type="text" aria-required="true" title="Next 2 digits">-
             <input id="d4" size="4" type="text" aria-required="true" title="Last 4 digits">
-            <input id="save" type="button" aria-label="Save">
+            <input onclick="return alert('Registration done successfully!');" id="save" type="submit" aria-label="Save">
         </div>
     </form>
     <script>
         const move = (e) => {
-            
+
             e.target.value.length >= e.target.getAttribute("size") ? e.target.nextElementSibling.focus() : false;
         };
         document.querySelectorAll('input[type="text"]').forEach((input) => {

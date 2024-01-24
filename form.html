@@ -162,7 +162,9 @@
         const submition = () => {
             document.getElementById("msg").parentElement.style.display = "block";
             setTimeout(() => {
+                document.getElementById('form').reset();
                 document.getElementById("msg").textContent = "Message sent successfully!";
+
             }, 500);
 
             return false;

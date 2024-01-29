@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Message Submission Form</title>
+</head>
+
+<body>
+  <h1 id="title">Send Your Message</h1>
+  <section id="message-area"></section>
+  <form id="message-submission-form" aria-labelledby="title">
+    <p>
+      <label for="name">Your Name: *</label>
+      <input type="text" name="name" id="name" aria-required="true">
+    </p>
+    <p>
+      <label for="surname">Your Surname: *</label>
+      <input type="text" name="surname" id="surname" aria-required="true">
+    </p>
+    <p>
+      <label for="phone">Your Phone Number: *</label>
+      <input type="tel" name="phone" id="phone" aria-required="true">
+    </p>
+    <p>
+      <label for="message">Write Your Message: *</label>
+      <textarea name="message" id="message" rows="80" cols="80" aria-required="true"></textarea>
+    </p>
+    <p>
+      <button>Submit Message</button>
+    </p>
+
+  </form>
+
+  <script>
+    var form = document.getElementById("message-submission-form");
+    form.onsubmit = validateData;
+    function validateData() {
+
+      var fields = form.querySelectorAll("input, textarea");
+      var messageArea = document.getElementById("message-area");
+      var fieldsWithError = [];
+      var errorCount = 0;
+      for (var i = 0; i < fields.length; i++) {
+        if (fields[i].value == "") {
+          fieldsWithError[errorCount] = fields[i];
+          fields[i].setAttribute("aria-invalid", "true");
+          fields[i].setAttribute("style", "outline: 2px solid red;");
+          errorCount++;
+          fields[i].addEventListener("input", (e) => {
+            if (e.target.value != "") {
+              e.target.setAttribute("aria-invalid", "false");
+              e.target.removeAttribute("style");
+            }
+          });
+        }
+
+      }
+      if (fieldsWithError.length > 0) {
+        //alert("There are " + fieldsWithError.length + " errors in the form");
+        var errors = fieldsWithError.length == 1 ? "<h2 id='message-area-title' tabindex='-1'>There is " + fieldsWithError.length + " error in the form</h2>" : "<h2 id='message-area-title' tabindex='-1'>There are " + fieldsWithError.length + " errors in the form</h2>";
+        errors += "<p id='message-area-text'>Please correct the following fields:</p>";
+        errors += "<ul>";
+        for (errorCount = 0; errorCount < fieldsWithError.length; errorCount++) {
+          errors += "<li><a onclick='removeError(this);' href='#" + fieldsWithError[errorCount].id + "'>The " + fieldsWithError[errorCount].id + " field cannot be empty</a></li>";
+        }
+        errors += "</ul>";
+        messageArea.innerHTML = errors;
+      } else {
+        //alert("There are no errors");
+        var confirmation = "<h2 id='message-area-title' tabindex='-1'>Data Submission Confirmation</h2>";
+        confirmation += "<p id='message-area-text'>Please verify that the following data has been filled out correctly:</p>";
+        confirmation += "<ul>";
+        for (var i = 0; i < fields.length; i++) {
+          confirmation += "<li><a href='#" + fields[i].id + "'>" + fields[i].id + ": " + fields[i].value + "</a></li>";
+        }
+        confirmation += "</ul>";
+        confirmation += "<button onclick='submitForm();'>Confirm Filled Data and Submit</button>";
+        messageArea.innerHTML = confirmation;
+
+        //messageArea.setAttribute("aria-labelledby", "message-area-title");
+        //messageArea.setAttribute("aria-describedby", "message-area-text");
+
+      }
+      document.getElementById("message-area-title").focus();
+      return false;
+    }
+    function submitForm() {
+      alert("Thank you for your message!");
+      form.submit();
+    }
+    function removeError(clickedLink) {
+      //clickedLink.parentNode.parentNode.removeChild(clickedLink.parentNode);
+
+    }
+
+  </script>
+</body>
+
+</html>

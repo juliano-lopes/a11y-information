@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Accessibility Information</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
+    type="text/css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <h1>The best songs</h1>
+
+  <audio src="Ocean-View-Patrick-Patrikios.mp3" controls></audio autoplay></audio>
+  <script>
+    window.addEventListener("DOMContentLoaded", (e) => {
+      // Registrar uma Media Session
+      navigator.mediaSession.register({
+        title: 'Título da mídia',
+        artist: 'Nome do artista',
+        album: 'Nome do álbum',
+        artwork: [
+          {
+            src: 'URL da capa da mídia',
+            sizes: '100x100',
+            type: 'image/png',
+          },
+        ],
+      });
+
+      // Definir o estado da reprodução como "playing"
+      navigator.mediaSession.playbackState = 'playing';
+
+      // Iniciar a reprodução do áudio
+      const audioElement = document.querySelector('audio');
+      audioElement.play();
+
+    });
+
+  </script>
+</body>
+
+</html>

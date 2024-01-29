@@ -62,7 +62,7 @@
         errors += "<p id='message-area-text'>Please correct the following fields:</p>";
         errors += "<ul>";
         for (errorCount = 0; errorCount < fieldsWithError.length; errorCount++) {
-          errors += "<li><a onclick='removeError(this);' href='#" + fieldsWithError[errorCount].id + "'>The " + fieldsWithError[errorCount].id + " field cannot be empty</a></li>";
+          errors += "<li><a onclick='removeError(this);' href='#" + fieldsWithError[errorCount].id + "'>The " + fieldsWithError[errorCount].id + " field cannot be blank</a></li>";
         }
         errors += "</ul>";
         messageArea.innerHTML = errors;

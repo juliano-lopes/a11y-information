@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Accessibility Information</title>
+  <title>Page with autoplay - Accessibility Information</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
     type="text/css">
   <link rel="stylesheet" href="style.css">
@@ -18,36 +18,8 @@
 <body>
   <h1>The best songs</h1>
 
-  <audio src="Ocean-View-Patrick-Patrikios.mp3" controls></audio>
-  <script>
+  <audio src="Ocean-View-Patrick-Patrikios.mp3" controls autoplay></audio>
 
-    window.addEventListener("DOMContentLoaded", (e) => {
-      // Registrar uma Media Session
-      // Registrar uma Media Session
-      navigator.mediaSession.register({
-        title: 'Título da mídia',
-        artist: 'Nome do artista',
-        album: 'Nome do álbum',
-        artwork: [
-          {
-            src: 'URL da capa da mídia',
-            sizes: '100x100',
-            type: 'image/png',
-          },
-        ],
-      });
-
-      // Definir o estado da reprodução como "playing"
-      navigator.mediaSession.playbackState = 'playing';
-
-      // Iniciar a reprodução do áudio
-      const audioElement = document.querySelector('audio');
-      audioElement.play();
-
-      // **ERRO DE DIGITAÇÃO: Faltando ')' no final da função**
-    });
-
-  </script>
 </body>
 
 </html>

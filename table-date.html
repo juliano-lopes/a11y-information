@@ -53,12 +53,12 @@
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td> <input readonly aria-label=""> </td>
+            <td id="date_2_1"> </td>
         </tr>
         <tr>
             <td>Severe</td>
             <td>One more Foo Summary</td>
-            <td><span aria-labelledby="date_2"></span></td>
+            <td id="date_2_2"> </td>
         </tr>
 
     </table>
@@ -77,8 +77,10 @@
         }
 
         if (dayApril <= 30) {
-            document.getElementById("date_2").textContent = `April ${dayApril++}`;
-            document.querySelector("[aria-label]").setAttribute("aria-label", `April ${dayApril++}`);
+            document.getElementById("date_2").textContent = `April ${dayApril}`;
+            document.getElementById("date_2_1").textContent = `April ${dayApril}`;
+            document.getElementById("date_2_2").textContent = `April ${dayApril}`;
+            dayApril++;
         } else {
             dayApril = 1;
         }

@@ -23,7 +23,7 @@
             <th>Severity</th>
             <th>Summary</th>
             <!-- it uses the class sr-only to be visually hidden but available for screen readers: -->
-            <th class="sr-only">Date</th>
+            <th>Date</th>
         </tr>
         <tr>
             <!-- date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
@@ -33,17 +33,17 @@
             <td>Severe</td>
             <td>Summary Foo</td>
             <!-- data associated to the date row with the "date"id  by aria-labelledby attribute. It uses th to be the row header announced by screen readers as the user navigates through the table rows: -->
-            <th class="sr-only"><span aria-labelledby="date"> </span></th>
+            <th><span aria-labelledby="date"> </span></th>
         </tr>
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td class="sr-only"><span aria-labelledby="date"></span> </td>
+            <td><span aria-labelledby="date"></span> </td>
         </tr>
         <tr>
             <td>Severe</td>
             <td>One more Foo Summary</td>
-            <td class="sr-only"><span aria-labelledby="date"></span> </td>
+            <td><span aria-labelledby="date"></span> </td>
         </tr>
         <tr>
             <!-- another date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
@@ -53,12 +53,12 @@
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td aria-label=""></td>
+            <td> <input readonly aria-label=""> </td>
         </tr>
         <tr>
             <td>Severe</td>
             <td>One more Foo Summary</td>
-            <td aria-label=""></td>
+            <td><span aria-labelledby="date_2"></span></td>
         </tr>
 
     </table>
@@ -78,7 +78,7 @@
 
         if (dayApril <= 30) {
             document.getElementById("date_2").textContent = `April ${dayApril++}`;
-            document.getElementById("[aria-label]").setAttribute("aria-label", `April ${dayApril++}`);
+            document.querySelector("[aria-label]").setAttribute("aria-label", `April ${dayApril++}`);
         } else {
             dayApril = 1;
         }

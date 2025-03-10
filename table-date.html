@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table with dates</title>
+    <style>
+        .sr-only {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Logs</h1>
+    <table>
+        <tr>
+            <th>Severity</th>
+            <th>Summary</th>
+            <!-- it uses the class sr-only to be visually hidden but available for screen readers: -->
+            <th class="sr-only">Date</th>
+        </tr>
+        <tr>
+            <!-- date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
+            <td id="date" colspan="2">March 1</td>
+        </tr>
+        <tr>
+            <td>Severe</td>
+            <td>Summary Foo</td>
+            <!-- data associated to the date row with the "date"id  by aria-labelledby attribute. It uses th to be the row header announced by screen readers as the user navigates through the table rows: -->
+            <th class="sr-only"><span aria-labelledby="date"></span></th>
+        </tr>
+        <tr>
+            <td>Severe</td>
+            <td>Another SummaryFoo</td>
+            <td class="sr-only"><span aria-labelledby="date"></span></td>
+        </tr>
+        <tr>
+            <td>Severe</td>
+            <td>One more Foo Summary</td>
+            <td class="sr-only"><span aria-labelledby="date"></span></td>
+        </tr>
+        <tr>
+            <!-- another date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
+            <td id="date_2" colspan="2">April 1</td>
+        </tr>
+
+        <tr>
+            <td>Severe</td>
+            <td>Another SummaryFoo</td>
+            <td class="sr-only"><span aria-labelledby="date_2"></span></td>
+        </tr>
+        <tr>
+            <td>Severe</td>
+            <td>One more Foo Summary</td>
+            <td class="sr-only"><span aria-labelledby="date_2"></span></td>
+        </tr>
+
+    </table>
+</body>
+<script>
+    // it changes the date dynamicly every 5 seconds just simulating the changes. Screen readers will read the 3rd column (Date) according to the data in the row that contains colspan="2" and id date and date_2, respectively, because of the aria-labelledby attribute:
+    let dayMarch = 1;
+    let dayApril = 1;
+
+    setInterval(() => {
+        if (dayMarch <= 31) {
+            document.getElementById("date").textContent = `March ${dayMarch++}`;
+        } else {
+            dayMarch = 1;
+        }
+
+        if (dayApril <= 30) {
+            document.getElementById("date_2").textContent = `April ${dayApril++}`;
+        } else {
+            dayApril = 1;
+        }
+    }, 5000);
+</script>
+
+</html>

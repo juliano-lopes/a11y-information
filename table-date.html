@@ -53,12 +53,12 @@
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td><span aria-labelledby="date_2"> </span></td>
+            <td aria-label=""></td>
         </tr>
         <tr>
             <td>Severe</td>
             <td>One more Foo Summary</td>
-            <td><span aria-labelledby="date_2"> </span></td>
+            <td aria-label=""></td>
         </tr>
 
     </table>
@@ -71,12 +71,14 @@
     setInterval(() => {
         if (dayMarch <= 31) {
             document.getElementById("date").textContent = `March ${dayMarch++}`;
+
         } else {
             dayMarch = 1;
         }
 
         if (dayApril <= 30) {
             document.getElementById("date_2").textContent = `April ${dayApril++}`;
+            document.getElementById("[aria-label]").setAttribute("aria-label", `April ${dayApril++}`);
         } else {
             dayApril = 1;
         }

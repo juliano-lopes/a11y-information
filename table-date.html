@@ -23,7 +23,7 @@
             <th>Severity</th>
             <th>Summary</th>
             <!-- it uses the class sr-only to be visually hidden but available for screen readers: -->
-            <th>Date</th>
+            <th class="sr-only">Date</th>
         </tr>
         <tr>
             <!-- date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
@@ -33,32 +33,26 @@
             <td>Severe</td>
             <td>Summary Foo</td>
             <!-- data associated to the date row with the "date"id  by aria-labelledby attribute. It uses th to be the row header announced by screen readers as the user navigates through the table rows: -->
-            <th><span aria-labelledby="date"> </span></th>
+            <th class="sr-only"><span aria-labelledby="date"> </span></th>
         </tr>
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td><span aria-labelledby="date"></span> </td>
-        </tr>
-        <tr>
-            <td>Severe</td>
-            <td>One more Foo Summary</td>
-            <td><span aria-labelledby="date"></span> </td>
+            <td class="sr-only"><span aria-labelledby="date"></span> </td>
         </tr>
         <tr>
             <!-- another date shown visually and associated later by its id in the aria-labelledby attribute for screen readers -->
             <td id="date_2" colspan="3">April 1</td>
         </tr>
-
         <tr>
             <td>Severe</td>
             <td>Another SummaryFoo</td>
-            <td id="date_2_1"> </td>
+            <td class="sr-only" id="date_2_1"> </td>
         </tr>
         <tr>
             <td>Severe</td>
             <td>One more Foo Summary</td>
-            <td id="date_2_2"> </td>
+            <td class="sr-only" id="date_2_2"> </td>
         </tr>
 
     </table>
